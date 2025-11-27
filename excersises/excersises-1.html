@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+    <script type="text/babel">
+      // Component Hello
+      function Hello({ name }) {
+        return <h1>Hallo, {name ? name : "wereld"}</h1>;
+      }
+
+      // Component Counter
+      function Counter() {
+        const [count, setCount] = React.useState(0);
+
+        return (
+          <div>
+            <p>Count: {count}</p>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+            <button onClick={() => setCount(0)}>Reset</button>
+          </div>
+        );
+      }
+
+      // Component Toggle
+      function ToggleText() {
+        const [show, setShow] = React.useState(false);
+
+        return (
+          <div>
+            <button onClick={() => setShow(!show)}>
+              {show ? "Verberg tekst" : "Toon tekst"}
+            </button>
+            {show && <p>Hello React</p>}
+          </div>
+        );
+      }
+
+      function FruitList() {
+        const fruits = ["Apple", "Banana", "Cherry"];
+        return (
+          <ul>
+            {fruits.map((fruit, index) => (
+              <li key={index}>
+                {" "}
+                {index + 1}. {fruit}{" "}
+              </li>
+            ))}
+          </ul>
+        );
+      }
+
+      function InputNaam() {
+        const [name, setName] = React.useState("");
+
+        return (
+          <div>
+            <input
+              type="text"
+              placeholder="Typ je naam..."
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <p>Welkom, {name || "gast"}!</p>
+          </div>
+        );
+      }
+
+      
+
+      function KleurToggle() {
+        const [kleur, setKleur] = React.useState('lightblue')
+
+        return (
+          <div>
+            <button onClick={() => setKleur(kleur === "lightblue" ? "lightgreen" : "lightblue")}>
+              wissel Kleur
+            </button>
+            <div style={{color: 'green', backgroundColor: kleur, padding: "10px", marginTop: "10px"}}> 
+              dit is een gekleurd vak
+            </div>
+          </div>
+        )
+      }
+
+      function TimerUp() {
+        const [Time, setTime] = React.useState(0);
+        const [IsRunning, setIsRunning] = React.useState(false);
+        const MaxTime = 20; // vaste waarde dus hoeft niet in usestate 
+        
+
+
+
+        React.useEffect(() => {
+          if (!IsRunning) return;
+      
+
+          const intervalId = setInterval(() => {
+            setTime(prev => {
+              if (prev + 1 >= 20) {
+                setIsRunning(false);
+                return MaxTime;
+              }
+              return prev + 1;
+            });
+          }, 1000);
+
+          return () => clearInterval(intervalId);
+        }, [IsRunning]);
+
+
+         return (
+    <div>
+      <h2 style={{color: Time >= MaxTime ? 'red' : 'blue'}}>Timer: {Time} seconden {Time >= MaxTime && "maximale tijd bereikt"}</h2>
+      <button onClick={() => setTime(0)}>Reset Timer</button>
+      <button onClick={() => setIsRunning(true)}> start timer </button>
+      <button onClick={() => setIsRunning(false)}> pauzeer </button>
+    </div>
+  );
+}
+
+
+  function CounterNew() {
+    const [Count, setCount] = React.useState(0);
+
+    const increment = () => setCount(prev => Math.min(prev + 1, 10));
+    const decrement = () => setCount(prev => Math.max(prev - 1, 0));
+    const reset = () => setCount(0)
+    const doubleIncrement = () => setCount(prev => Math.min(prev + 2, 10));
+
+   React.useEffect(() => {
+  if (Count === 0) return;
+
+  console.log("Timer gestart...");
+  const timeout = setTimeout(() => {
+    console.log("Timer klaar — reset naar 0");
+    setCount(0);
+  }, 10000);
+
+  return () => {
+    console.log("Oude timer gestopt");
+    clearTimeout(timeout);
+  };
+}, [Count]);
+
+
+    return (
+      <div>
+        <p>count: {Count} </p>
+        <button onClick={increment}> +1 </button>
+        <button onClick={decrement}> -1 </button>
+        <button onClick={reset}> reset </button>
+      </div>
+    )
+  }
+
+
+
+
+
+
+  function ClickCounter() {
+    const [clicks, setClicks] = React.useState(0)
+
+    const addClick = () => setClicks(prev => prev + 1);
+
+    const color = clicks >= 10 ? "blue" : clicks >= 5 ? "lightgreen" : "red"
+
+    React.useEffect(() => {
+      if (clicks >= 15) {
+        setClicks(0)
+      }
+    }, [clicks])
+
+
+    return (
+      <div style={{backgroundColor: color, padding: "10px", borderRadius: "8px"}}>
+        <p>amount of clicks {clicks} </p>
+        <button onClick={addClick} > klik mij </button>
+      </div>
+    )
+  }
+
+      // Root container
+      const container = document.querySelector(".js-container");
+      const root = ReactDOM.createRoot(container);
+
+      // Render meerdere componenten
+      root.render(
+        <div>
+          <Hello name="Sanne" />
+          <Counter />
+          <ToggleText />
+          <FruitList />
+          <InputNaam />
+          <KleurToggle /> 
+          <TimerUp />
+          < CounterNew />
+        </div>
+      );
+    </script>
+  </body>
+</html>

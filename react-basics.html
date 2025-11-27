@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+        const button = <button>Click me!</button>;
+        const paragraph = <p>paragrah text</p>;
+
+        const div = (
+          <div>
+            <button>Click me!</button>
+            <p>paragrah text</p>
+          </div>
+        );
+        
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(div);
+
+      // document.queryselector om html element van website in javascript te krijgen document combineert html en javascript 
+      // laat ze samewerken opslaan in variable om later te gebruiken 
+      // ReactDOM.createRoot sets up react en geef de container zodat alles daarin met react kan werken
+        // render is de functie die alles in de container zet
+        // 'Welcome to SuperSimpleDev React Course' is de tekst die in de container komt te staan
+    </script>
+  </body>
+</html>

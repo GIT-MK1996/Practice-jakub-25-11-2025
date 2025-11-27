@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="menu"></div>
+    <div id="content"></div>
+    <div id="bottom"></div>
+
+
+
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+
+
+       
+        
+
+      const container = document.getElementById('app');
+      //ReactDOM.createRoot(container).render(div);
+
+      const reactX = ReactDOM.createRoot(container); // return { render : function(div) { console.log('rendering...'); }, unmount : function() { console.log('umounting...') } };
+      reactX.render("hello");
+
+      
+    </script>
+  </body>
+</html>
