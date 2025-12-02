@@ -1,0 +1,68 @@
+Assignment 1: basic syntax, variables, operators, if-then-else
+and loops
+
+✅ 1. Temperature Converter (Celsius ↔ Fahrenheit)
+Description:
+Write code that takes a temperature value and a unit ("C" or "F") and outputs the converted
+temperature.
+Example:
+Input: 32, "C" → Output: 89.6 F
+Input: 100, "F" → Output: 37.8 C
+✅ 2. Password Strength Checker
+Description:
+Given a string, check its strength:
+• length < 6 → "Weak"
+• length 6–10 → "Medium"
+• length > 10 → "Strong"
+Use if / else if / else.
+✅ 3. Find the Smallest and Largest Number in an Array
+Description:
+Given an array of numbers, loop through it and return the smallest and largest values.
+Example:
+Input: [5, 2, 8, 1, 9] → Output: min = 1, max = 9
+✅ 4. Count Vowels in a Word
+Description:
+Loop through a string and count how many vowels (a,e,i,o,u) it contains.
+Example:
+Input: "developer" → Output: 4
+✅ 5. Grocery Shopping Calculator
+Description:
+You have an array of item prices. Calculate the total using a loop.
+If the total is above 50, apply a 10% discount.
+Example:
+Input: [10, 12, 5, 30] → Total = 57 → Discount → Output = 51.3
+✅ 6. Simple ATM Withdrawal Simulator
+Description:
+Given a balance and a withdrawal amount:
+• If amount > balance → print "Insufficient funds"
+• Otherwise subtract and show remaining balance.
+✅ 7. Reverse a String (manually, using a loop)
+Description:
+Do not use .reverse() or .split().
+Build a new string by looping backward.
+Example:
+"hello" → "olleh"
+✅ 8. Multiplication Table Generator
+Description:
+Ask the user for a number and print a multiplication table (1–10).
+Example:
+Input: 5
+Output:
+5 × 1 = 5
+5 × 2 = 10
+...
+5 × 10 = 50
+✅ 9. Count How Many Times a Value Appears
+Description:
+Given an array and a number, count how many times the number appears.
+Example:
+Array: [1,2,2,3,2], value: 2 → Output: 3
+✅ 10. Parking Fee Calculator
+Description:
+Rules:
+• First hour: €4
+• Each additional hour: €2
+• Maximum fee: €20
+Given the number of hours, calculate the fee. Use loops or repeated subtraction.
+Example:
+Input: 5 → 4 + 2 + 2 + 2 + 2 = 12
