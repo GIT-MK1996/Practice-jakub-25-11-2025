@@ -1,0 +1,114 @@
+✅ 10 JavaScript Practice Exercises
+
+1. Data Types: Type Checker
+
+Task:
+Write a function describeType(value) that returns a string describing the value’s type.
+It should correctly identify:
+
+number
+
+string
+
+boolean
+
+null
+
+undefined
+
+array
+
+object
+
+function
+
+Hint:
+Use typeof, and for arrays use Array.isArray().
+
+2. String Manipulation: Normalize a User Name
+
+Task:
+Given a string like " JoHn doE ", write a function that:
+
+trims spaces
+
+capitalizes first and last names ("John Doe")
+
+Hint:
+Use trim(), split(), and string indexing.
+
+3. Numbers: Safe Sum
+
+Task:
+Write a function that takes an array of numbers and returns the sum, ignoring any non-number values.
+Example:
+sum([1, "2", 3, null, 4]) → 8
+Hint:
+Use typeof === "number" inside a loop or reduce.
+
+4. Arrays: Unique Values
+
+Task:
+Write a function that returns a new array containing only unique values from the original.
+Example:
+unique([1,2,2,3,1]) → [1,2,3]
+Hint:
+You can use either a loop or new Set().
+
+5. Arrays: Custom Filter
+
+Task:
+Implement your own filter function named myFilter(array, callback) that behaves like Array.prototype.filter.
+Hint:
+Loop through items and push the item when callback(item) is true.
+
+6. Date: Calculate Age
+
+Task:
+Write a function calculateAge(birthDateString) that returns the person's age in years.
+Example input: "1998-04-10"
+Hint:
+Use new Date(), subtract timestamps, convert to years.
+
+7. Date: Add Days
+
+Task:
+Create a function addDays(date, days) that returns a new Date shifted by a given number of days.
+Hint:
+Dates can be shifted using milliseconds: days * 24 * 60 * 60 * 1000.
+
+8. Map: Count Word Occurrences
+
+Task:
+Given a string, count how many times each word appears. Return a Map where:
+
+key = word
+
+value = count
+
+Example:
+"one two two three two" → Map { one → 1, two → 3, three → 1 }
+Hint:
+Split on spaces, iterate, increment.
+
+9. Set: Intersection of Two Arrays
+
+Task:
+Write a function that returns the intersection between two arrays.
+Example:
+intersection([1,2,3], [2,3,4]) → [2,3]
+Hint:
+Convert one array to a Set, then filter the other.
+
+10. Collections: Group Objects by Key
+
+Task:
+Given an array of objects, group them by a given key using a Map.
+Example:
+Input:
+[ {type: "fruit", name: "apple"}, {type: "vegetable", name: "carrot"}, {type: "fruit", name: "banana"} ] 
+Output:
+Map { "fruit" → [ {…}, {…} ], "vegetable" → [ {…} ] } 
+Hint:
+Check if key exists in the Map; if not, create a new array.
+If you'd like, I can also provide solutions, unit tests, or more advanced exercises (async, classes, DOM, algorithms, etc).
