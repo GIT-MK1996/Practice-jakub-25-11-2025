@@ -1,0 +1,31 @@
+
+Use an available free REST API (e. g. https://jsonplaceholder.typicode.com/). 
+
+
+    1. Fetch all posts and display them
+        ◦ Use fetch (or XHR) to GET /posts
+        ◦ Parse JSON and render a list of post titles in the DOM
+    2. Fetch a single post by ID when a button is clicked
+        ◦ Add an <input> to enter a post ID, and a “Load post” button
+        ◦ On click, fetch /posts/{id} and display its title and body
+    3. Fetch and display comments for a post
+        ◦ For example, fetch /posts/1/comments
+        ◦ Show comment names and bodies under the related post
+    4. Create a “load more” button to paginate or load additional data
+        ◦ E.g. fetch /posts?_page=2&_limit=10 (or manually split array)
+        ◦ On “Load more” click — append more posts to list
+    5. Handle loading state and errors gracefully
+        ◦ Show a “Loading…” message while fetching
+        ◦ If fetch fails (simulate by using wrong URL), catch the error and show a user-friendly message
+    6. Fetch data based on user input (search/filter)
+        ◦ Add an input to search for a user ID
+        ◦ On change or button click, fetch /users/{id} and show user info (name, email, etc.)
+    7. Combine multiple asynchronous calls
+        ◦ Example: fetch a post (/posts/1) and its comments (/posts/1/comments) in parallel (or sequentially) and render both when both are done
+    8. Use event listeners to dynamically fetch based on UI interactions
+        ◦ For example, have a list of posts; when the user clicks a post title → fetch its comments and show them below that post
+    9. Implement a simple “infinite scroll” or lazy-load list
+        ◦ When user scrolls near bottom, fetch next page of posts and append to list
+    10. Optional: Use POST/PUT/DELETE with “fake” data (to practise full CRUD)
+        ◦ Use POST /posts to “create” a post — see how JSONPlaceholder returns a fake created object. openpublicapis.com
+        ◦ (You can also try PUT or DELETE to “update” or “delete” — even though data isn’t persisted, it’s good practice of request syntax.)
